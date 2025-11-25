@@ -70,6 +70,18 @@
   }
 }
 
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
 .hiddenBox:hover {
   transform: scale(1.2); /* Scale up on hover */
 }
@@ -323,11 +335,30 @@
   left: 50%; /* Center horizontally */
   transform: translate(-50%, -50%); /* Adjust to center the modal properly */
   width: 400px;
-  height: 250px;
+  height: 270px;
   background-color: white;
 
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
   padding-top: 50px;
+}
+
+.endGameLeaderboard {
+  display: flex;
+  align-items: top;
+  justify-content: center;
+  position: fixed;
+  top: 50%; /* Center vertically */
+  left: 50%; /* Center horizontally */
+  transform: translate(-50%, -50%); /* Adjust to center the modal properly */
+  width: 400px;
+  height: 390px;
+  background-color: white;
+
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+  padding-top: 50px;
+}
+.endGameStatsContainer {
+  width: 60%;
 }
 .tutorial {
   display: flex;
@@ -367,7 +398,7 @@
   font-size: small;
   font-family: "Comfortaa";
   font-weight: 900;
-  margin-bottom: 15px;
+
   color: rgb(70, 51, 4);
 }
 .modalText1 {
@@ -384,7 +415,8 @@
 .modalText2 {
   font-size: medium;
   font-family: "Comfortaa";
-  padding-bottom: 5px;
+
+  margin-top: 25px;
 }
 .modalText3 {
   font-size: 14px;
@@ -400,12 +432,20 @@
   border-radius: 3px;
   padding-top: 5px;
   padding-bottom: 5px;
-  margin-top: 30px;
+  margin-top: 20px;
   border-color: #333;
   align-items: center;
   justify-content: center;
+  margin-bottom: 12px;
 }
 
+.modalText5 {
+  font-size: medium;
+  font-family: "Comfortaa";
+
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
 .modalText1Tut {
   font-size: xx-large;
   font-family: "Comfortaa";
@@ -432,7 +472,7 @@
   background-color: bisque;
   align-items: center;
   justify-content: center;
-  margin-left: 5px;
+  margin-left: 0px;
   margin-top: 10px;
   animation: expandAndRetract 0.5s ease;
 }
@@ -450,7 +490,7 @@
   background-color: bisque;
   align-items: center;
   justify-content: center;
-  margin-left: 5px;
+  margin-left: 0 px;
   margin-top: 10px;
   cursor: pointer;
 }
@@ -467,7 +507,9 @@
   color: black;
 }
 .fadeInOut {
-  opacity: 0;
+  display: flex;
+  align-items: center; /* Center vertically */
+  justify-content: center; /* Center horizontally */
   font-size: small;
   font-family: "Comfortaa";
   border-width: 2px;
@@ -476,17 +518,35 @@
   border-radius: 3px;
   padding-top: 3px;
   padding-bottom: 3px;
-  padding-left: 65px;
   border-color: #333;
   background-color: #333;
-  align-items: center;
-  justify-content: center;
-
   margin-top: 10px;
-
+  width: 100%;
   animation: fadeInOut 1s ease-in-out forwards;
 }
 
+.fadeIn {
+  display: flex;
+  align-items: center; /* Center vertically */
+  justify-content: center; /* Center horizontally */
+  font-size: small;
+  font-family: "Comfortaa";
+  border-width: 2px;
+  border-style: solid;
+  color: #ffffff;
+  border-radius: 3px;
+  padding-top: 3px;
+  padding-bottom: 3px;
+  border-color: #333;
+  background-color: #333;
+  margin-top: 10px;
+  width: 100%;
+  animation: fadeIn 1s ease-in-out forwards;
+}
+
+.clipboardText {
+  /* Define any additional styling for the text here */
+}
 .main {
   display: flex;
   flex-direction: column;
@@ -604,6 +664,100 @@
   outline: none; /* Remove focus outline for better aesthetics */
 }
 
+.leaderboardBox {
+  display: flex;
+  width: 250px;
+}
+
+.leaderboardBoxStats {
+  display: flex;
+
+  align-items: center;
+  background-color: rgb(197, 161, 230);
+
+  height: 30px;
+  width: 200px;
+  border-width: 5px;
+
+  font-size: 20px;
+  margin-top: 2px;
+  margin-bottom: 2px;
+  border-radius: 4px;
+  font-size: large;
+  font-family: "Comfortaa";
+}
+.userLeaderboardBoxStats {
+  display: flex;
+
+  align-items: center;
+  background-color: rgb(241, 163, 46);
+
+  height: 30px;
+  width: 200px;
+  border-width: 5px;
+
+  font-size: 20px;
+  margin-top: 2px;
+  margin-bottom: 2px;
+  border-radius: 4px;
+  font-size: large;
+  font-family: "Comfortaa";
+}
+.highscoreName {
+  position: fixed;
+  margin-right: 5px;
+  left: 120px;
+}
+.highscoreScore {
+  position: fixed;
+  right: 95px;
+  justify-content: flex-end;
+}
+
+.leaderboardBoxNum {
+  display: flex;
+
+  justify-content: center;
+  align-items: center;
+  color: white;
+  background-color: #333333;
+  font-size: xx-small;
+  font-weight: 100;
+  font-family: "Comfortaa";
+
+  height: 30px;
+  width: 30px;
+
+  font-size: 20px;
+  margin-right: 2px;
+  margin-top: 2px;
+  border-radius: 4px;
+}
+
+.leaderboard {
+  display: flex;
+  flex-direction: column;
+  width: 100px;
+}
+.placeNum {
+  display: flex;
+}
+.playerScore3 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(255, 220, 123);
+
+  height: 30px;
+  width: 2005px;
+  border-width: 5px;
+  border-style: solid;
+  border-radius: 6px;
+  border-color: rgb(197, 161, 230);
+  font-size: 20px;
+  transition: transform 0.3s ease;
+  cursor: pointer;
+}
 .logo {
   display: flex;
   justify-content: center;

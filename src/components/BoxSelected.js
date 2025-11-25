@@ -21,10 +21,7 @@ function Box(props) {
     }, 300); // 0.3 seconds, which matches the animation duration
   }, []);
 
-  console.log(props.bounce);
-  const tt = () => {
-    console.log("yay");
-  };
+  const tt = () => {};
   return (
     <div className={`${"selectedBox"} ${isExpanding ? "expand-retract" : ""}`}>
       <div>{props.val}</div>

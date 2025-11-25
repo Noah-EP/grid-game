@@ -53,7 +53,6 @@ export default function Grid(props) {
         "https://gridlinker-8e148.ew.r.appspot.com/api/gridGen"
       );
       const data = await response.json();
-      console.log("grid:", data.grid);
       return data.grid;
     } catch (error) {
       console.error("Error fetching grid:", error);
@@ -224,7 +223,6 @@ export default function Grid(props) {
             }
           }
         }
-        //console.log(boxOutlineArray);
       }
     }
 
@@ -232,10 +230,6 @@ export default function Grid(props) {
     saveStateToLocalStorage("boxOutlineArray", boxOutlineArray);
   };
   const changeSelectionState = (index, val) => {
-    //console.log(boxStatus.slice());
-    //console.log(boxStatus);
-    //let grid2 = [...grid];
-    //var gridIn[row][col] = structuredClone(boxStatus);
     var linked = false;
     var newGrid = GridGenerator();
     var colCount = 0;
@@ -418,7 +412,6 @@ export default function Grid(props) {
       //localStorage.clear();
     }
 
-    //console.log(gridIn[row][col]);
     // The components generated in makeGrid are rendered in div.grid-board
   };
 
@@ -432,9 +425,7 @@ export default function Grid(props) {
     fetchGeneratedGrid().then((gridData) => {
       // Now you can work with gridData
       newGrid = [gridData];
-      console.log("t");
 
-      console.log(newGrid);
       for (let row = 0; row < 10; row++) {
         grid.push([]);
         for (let col = 0; col < 5; col++) {

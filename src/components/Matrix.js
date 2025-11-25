@@ -13,7 +13,6 @@ function Matrix() {
   }
   grid.subset(math.index(5, 2), 2);
   const test = math.subset(grid, math.index(1, 2));
-  console.log(grid);
   return grid;
 }
 export default Matrix;
