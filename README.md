@@ -30,4 +30,4 @@ This repo contains the frontend for gridLinker. GridLinker is deployed as a fire
 - "reactjs-popup": "^2.0.5",
 - "web-vitals": "^2.1.4"
 
-See https://github.com/Lotoke/gridLinkerServer for backend, which handles grid number generation and player scores
+See \_\_\_ for backend server, which handles grid number generation and player scores
