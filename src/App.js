@@ -53,7 +53,7 @@ function App() {
   var tempBestScore = 0;
   var initDay;
   var shareScorePos;
-  console.log("New");
+
   const handleBounceEffect = () => {
     setIsBouncing(true);
 
